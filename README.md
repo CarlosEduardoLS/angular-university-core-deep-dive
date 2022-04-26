@@ -1,6 +1,6 @@
 # Angular University Core Deep Dive
 
-![Screenshot](https://github.com/CarlosEduardoLS/angular-university-core-deep-dive/src/assets/angular-core-deep-dive.png)
+![Screenshot](https://github.com/CarlosEduardoLS/angular-university-core-deep-dive/tree/master/src/assets/angular-core-deep-dive.png)
 
 This project has created to validate the knowledges learned in the course 'Angular Core Deep Dive' ministering in Angular University
 
