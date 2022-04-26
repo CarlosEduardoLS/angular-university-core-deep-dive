@@ -1,4 +1,8 @@
-# AngularUniversityCoreDeepDive
+# Angular University Core Deep Dive
+
+![Screenshot](https://github.com/CarlosEduardoLS/angular-university-for-begginers/src/assets/angular-core-deep-dive.png)
+
+This project has created to validate the knowledges learned in the course 'Angular Core Deep Dive' ministering in Angular University
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
