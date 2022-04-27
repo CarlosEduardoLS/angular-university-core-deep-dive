@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { CoursesService } from '../../services/courses.service';
+import { COURSES_SERVICE } from '../app.component';
 import { Course } from '../model/course';
 
 @Component({
@@ -7,6 +16,10 @@ import { Course } from '../model/course';
   styleUrls: ['./course-card.component.css'],
 })
 export class CourseCardComponent implements OnInit {
+  constructor(
+    @Inject(COURSES_SERVICE) private readonly coursesService: CoursesService
+  ) {}
+
   @Input()
   course: Course;
 
@@ -15,8 +28,6 @@ export class CourseCardComponent implements OnInit {
 
   @Output('courseChanged')
   courseEmitter = new EventEmitter<Course>();
-
-  constructor() {}
 
   ngOnInit() {}
 
