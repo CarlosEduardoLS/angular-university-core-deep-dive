@@ -3,9 +3,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from '../app/model/course';
 
+let counter = 0;
+
 @Injectable()
 export class CoursesService {
-  constructor(private readonly httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) {
+    counter++;
+    this.id = counter;
+    console.log('Courses Service -> ', this.id);
+  }
+
+  id: number;
 
   getCourses(): Observable<Course[]> {
     const params = new HttpParams().set('page', '1').set('pageSize', '10');
