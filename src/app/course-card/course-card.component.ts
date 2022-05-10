@@ -15,9 +15,7 @@ import { Course } from '../model/course';
   styleUrls: ['./course-card.component.css'],
 })
 export class CourseCardComponent implements OnInit {
-  constructor(private readonly coursesService: CoursesService) {
-    console.log('Course Service Card -> ', this.coursesService.id);
-  }
+  constructor(private readonly coursesService: CoursesService) {}
 
   @Input()
   course: Course;

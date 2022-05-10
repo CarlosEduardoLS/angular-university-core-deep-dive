@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CoursesService } from '../services/courses.service';
+import { AppConfig, APP_CONFIG, CONFIG_TOKEN } from './config';
 import { Course } from './model/course';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [CoursesService],
 })
 export class AppComponent implements OnInit {
   constructor(private readonly coursesService: CoursesService) {}
