@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  SkipSelf,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
 import { Course } from '../model/course';
 
@@ -13,10 +6,9 @@ import { Course } from '../model/course';
   selector: 'course-card',
   templateUrl: './course-card.component.html',
   styleUrls: ['./course-card.component.css'],
-  providers: [CoursesService],
 })
 export class CourseCardComponent implements OnInit {
-  constructor(@SkipSelf() private readonly coursesService: CoursesService) {}
+  constructor(private readonly coursesService: CoursesService) {}
 
   @Input()
   course: Course;
