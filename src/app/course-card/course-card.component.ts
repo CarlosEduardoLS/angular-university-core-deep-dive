@@ -21,6 +21,10 @@ export class CourseCardComponent implements OnInit {
 
   ngOnInit() {}
 
+  onTitleChanged(title: string) {
+    this.course.description = title;
+  }
+
   onSaveClicked(description: string) {
     this.courseEmitter.emit({ ...this.course, description });
   }

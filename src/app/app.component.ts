@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { COURSES } from '../db-data';
 import { CoursesService } from '../services/courses.service';
 import { Course } from './model/course';
 
@@ -11,11 +12,9 @@ import { Course } from './model/course';
 export class AppComponent implements OnInit {
   constructor(private readonly coursesService: CoursesService) {}
 
-  courses$: Observable<Course[]>;
+  courses = COURSES;
 
-  ngOnInit(): void {
-    this.courses$ = this.coursesService.getCourses();
-  }
+  ngOnInit(): void {}
 
   updateCourse(course: Course) {
     this.coursesService
