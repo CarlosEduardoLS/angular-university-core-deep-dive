@@ -16,6 +16,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onEditCourse() {
+    // Didn't work becouse OnPush change detection
+    // this.courses[0].description = 'new value!';
+
+    const course = this.courses[0];
+
+    const newCourse = { ...course, description: 'New Value' };
+
+    this.courses[0] = newCourse;
+  }
+
   updateCourse(course: Course) {
     this.coursesService
       .updateCourse(course)
