@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
   Output,
-  Self,
+  SkipSelf,
 } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
 import { Course } from '../model/course';
@@ -16,7 +16,7 @@ import { Course } from '../model/course';
   providers: [CoursesService],
 })
 export class CourseCardComponent implements OnInit {
-  constructor(@Self() private readonly coursesService: CoursesService) {}
+  constructor(@SkipSelf() private readonly coursesService: CoursesService) {}
 
   @Input()
   course: Course;
