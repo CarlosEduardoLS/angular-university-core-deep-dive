@@ -1,10 +1,8 @@
 import {
   Component,
   EventEmitter,
-  Inject,
   Input,
   OnInit,
-  Optional,
   Output,
   Self,
 } from '@angular/core';
@@ -15,6 +13,7 @@ import { Course } from '../model/course';
   selector: 'course-card',
   templateUrl: './course-card.component.html',
   styleUrls: ['./course-card.component.css'],
+  providers: [CoursesService],
 })
 export class CourseCardComponent implements OnInit {
   constructor(@Self() private readonly coursesService: CoursesService) {}
