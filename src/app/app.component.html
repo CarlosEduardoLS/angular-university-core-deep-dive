@@ -8,6 +8,7 @@
 <div>
   <div class="courses" *ngIf="courses$ | async as courses">
     <course-card
+      [highlighted]="true"
       *ngFor="let course of courses"
       [course]="course"
       (courseChanged)="updateCourse($event)"
