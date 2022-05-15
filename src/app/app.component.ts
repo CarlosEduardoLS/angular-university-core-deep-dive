@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, Optional, Self } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CoursesService } from '../services/courses.service';
 import { Course } from './model/course';
@@ -7,7 +7,6 @@ import { Course } from './model/course';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [CoursesService],
 })
 export class AppComponent implements OnInit {
   constructor(private readonly coursesService: CoursesService) {}
