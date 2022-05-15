@@ -4,6 +4,7 @@ import {
   Inject,
   Input,
   OnInit,
+  Optional,
   Output,
 } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
@@ -15,7 +16,7 @@ import { Course } from '../model/course';
   styleUrls: ['./course-card.component.css'],
 })
 export class CourseCardComponent implements OnInit {
-  constructor(private readonly coursesService: CoursesService) {}
+  constructor(@Optional() private readonly coursesService: CoursesService) {}
 
   @Input()
   course: Course;

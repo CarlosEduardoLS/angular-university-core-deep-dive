@@ -5,9 +5,7 @@ import { Course } from '../app/model/course';
 
 let counter = 0;
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoursesService {
   constructor(private readonly httpClient: HttpClient) {
     counter++;
