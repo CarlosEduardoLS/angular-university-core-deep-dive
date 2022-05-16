@@ -18,6 +18,22 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="8856905278208146821" datatype="html">
+        <source> <x id="ICU" equiv-text="{ coursesTotal, plural, =0 {No courses available.}, =1 {One course is
+    available.} other {A total of {{ coursesTotal }} courses are available.} }" xid="3040982706855469049"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">21,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3512256557386475081" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {No courses available.} , =1 {One course is
+    available.} other {A total of <x id="INTERPOLATION"/> courses are available.}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
