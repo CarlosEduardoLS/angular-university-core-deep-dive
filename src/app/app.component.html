@@ -25,7 +25,7 @@
 
   <div class="courses">
     <course-card
-      *ngFor="let course of courses | filterByCategory: 'BEGINNER'"
+      *ngFor="let course of courses"
       [course]="course"
       type="begginer"
       (courseChanged)="updateCourse($event)"
