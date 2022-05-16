@@ -15,7 +15,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onEditCourse() {}
+  onEditCourse() {
+    this.courses[1].category = 'ADVANCED';
+  }
 
   updateCourse(course: Course) {
     this.coursesService
