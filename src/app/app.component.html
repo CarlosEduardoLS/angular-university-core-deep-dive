@@ -13,6 +13,7 @@
   <div class="courses" *ngIf="courses$ | async as courses">
     <course-card
       [course]="course"
+      type="begginer"
       *ngFor="let course of courses"
       (courseChanged)="updateCourse($event)"
     >

@@ -1,4 +1,5 @@
 import {
+  Attribute,
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
@@ -16,7 +17,12 @@ import { Course } from '../model/course';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseCardComponent implements OnInit {
-  constructor(private readonly coursesService: CoursesService) {}
+  constructor(
+    private readonly coursesService: CoursesService,
+    @Attribute('type') private type: string
+  ) {
+    console.log('type', type);
+  }
 
   @Input()
   course: Course;
