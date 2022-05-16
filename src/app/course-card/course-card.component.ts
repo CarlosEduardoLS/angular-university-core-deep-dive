@@ -1,6 +1,7 @@
 import {
   Attribute,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
@@ -19,7 +20,8 @@ import { Course } from '../model/course';
 export class CourseCardComponent implements OnInit {
   constructor(
     private readonly coursesService: CoursesService,
-    @Attribute('type') private type: string
+    @Attribute('type') private type: string,
+    private readonly cd: ChangeDetectorRef
   ) {
     console.log('type', type);
   }
