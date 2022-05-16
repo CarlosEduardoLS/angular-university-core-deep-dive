@@ -4,7 +4,6 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Attribute,
-  ChangeDetectionStrategy,
   Component,
   DoCheck,
   EventEmitter,
@@ -14,8 +13,8 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { CoursesService } from '../../services/courses.service';
-import { Course } from '../model/course';
+import { Course } from '../../model/course';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'course-card',
