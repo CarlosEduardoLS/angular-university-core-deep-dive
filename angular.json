@@ -5,6 +5,14 @@
   "projects": {
     "angular-university-core-deep-dive": {
       "projectType": "application",
+      "i18n": {
+        "locales": {
+          "fr": {
+            "translation": "src/locale/messages.fr.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
@@ -59,6 +67,11 @@
               ],
               "outputHashing": "all"
             },
+            "fr": {
+              "localize": ["fr"],
+              "outputPath": "dist/angular-university-core-deep-dive-fr/",
+              "i18nMissingTranslation": "error"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -75,6 +88,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-university-core-deep-dive:build:production"
+            },
+            "fr": {
+              "browserTarget": "angular-university-core-deep-dive:build:fr"
             },
             "development": {
               "browserTarget": "angular-university-core-deep-dive:build:development"
