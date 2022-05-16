@@ -12,7 +12,6 @@ export class CoursesService {
   constructor(private readonly httpClient: HttpClient) {
     counter++;
     this.id = counter;
-    console.log('Courses Service -> ', this.id);
   }
 
   id: number;
