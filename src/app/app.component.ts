@@ -12,32 +12,20 @@ import { Course } from './model/course';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit, DoCheck {
-  constructor(
-    private readonly coursesService: CoursesService,
-    private readonly cd: ChangeDetectorRef
-  ) {}
+  constructor(private readonly coursesService: CoursesService) {}
 
   courses: Course[];
 
-  isLoading = false;
-
   ngOnInit(): void {
-    this.coursesService.getCourses().subscribe((courses) => {
-      this.courses = courses;
-      this.isLoading = true;
-    });
+    this.coursesService
+      .getCourses()
+      .subscribe((courses) => (this.courses = courses));
   }
 
   ngDoCheck(): void {
     console.log('DoCheck');
-    if (this.isLoading) {
-      this.cd.markForCheck();
-      console.log('Called cd.markForCheck()');
-      this.isLoading = false;
-    }
   }
 
   onEditCourse() {}
