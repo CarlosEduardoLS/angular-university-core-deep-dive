@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 import { COURSES } from '../db-data';
+import { CourseTitleComponent } from './course-title/course-title.component';
 import { CoursesService } from './courses/courses.service';
 import { Course } from './model/course';
 
@@ -9,13 +11,22 @@ import { Course } from './model/course';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor(private readonly coursesService: CoursesService) {}
+  constructor(
+    private readonly coursesService: CoursesService,
+    private readonly injector: Injector
+  ) {}
 
   courses: Course[] = COURSES;
 
   coursesTotal = this.courses.length;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const htmlElement = createCustomElement(CourseTitleComponent, {
+      injector: this.injector,
+    });
+
+    customElements.define('course-title', htmlElement);
+  }
 
   onEditCourse() {
     this.courses[1].category = 'ADVANCED';
