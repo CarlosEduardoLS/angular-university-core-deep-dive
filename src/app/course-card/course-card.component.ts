@@ -1,7 +1,6 @@
 import {
   Attribute,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
@@ -20,10 +19,9 @@ import { Course } from '../model/course';
 export class CourseCardComponent implements OnInit {
   constructor(
     private readonly coursesService: CoursesService,
-    @Attribute('type') private type: string,
-    private readonly cd: ChangeDetectorRef
+    @Attribute('type') private type: string
   ) {
-    console.log('type', type);
+    console.log('constructor');
   }
 
   @Input()
@@ -35,7 +33,9 @@ export class CourseCardComponent implements OnInit {
   @Output('courseChanged')
   courseEmitter = new EventEmitter<Course>();
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('ngOnInit');
+  }
 
   onTitleChanged(title: string) {
     this.course.description = title;

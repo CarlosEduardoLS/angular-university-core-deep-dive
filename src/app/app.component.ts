@@ -1,10 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  DoCheck,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { COURSES } from '../db-data';
 import { CoursesService } from '../services/courses.service';
 import { Course } from './model/course';
 
@@ -13,20 +8,12 @@ import { Course } from './model/course';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit, DoCheck {
+export class AppComponent implements OnInit {
   constructor(private readonly coursesService: CoursesService) {}
 
-  courses: Course[];
+  courses: Course[] = COURSES;
 
-  ngOnInit(): void {
-    this.coursesService
-      .getCourses()
-      .subscribe((courses) => (this.courses = courses));
-  }
-
-  ngDoCheck(): void {
-    console.log('DoCheck');
-  }
+  ngOnInit(): void {}
 
   onEditCourse() {}
 
